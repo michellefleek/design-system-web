@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Icons - Foundation Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <!-- Phosphor Icons - individual weight stylesheets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/thin/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Montserrat", "sans-serif"] },
+          colors: {
+            sunflower: { DEFAULT: "#F8C642", 700: "#FFDB7E", 400: "#FCE4AA", 200: "#FEF2D4" },
+            marigold: { DEFAULT: "#E88239", 700: "#EC9D69", 400: "#F5C6A7", 200: "#F9E2D1" },
+            bluebell: { DEFAULT: "#6071D7", 700: "#8491DF", 400: "#B7BFEC", 200: "#DADFF6" },
+            "signal-yellow": { DEFAULT: "#FFD400", 700: "#FFE066", 400: "#FFF0B3", 200: "#FFF9E6" },
+            "vibrant-orange": { DEFAULT: "#F25C2A", 700: "#F78A63", 400: "#FBC3AE", 200: "#FDE8DF" },
+            "electric-blue": { DEFAULT: "#0D2BFF", 700: "#4D63FF", 400: "#9AA6FF", 200: "#E4E8FF" },
+            cream: { DEFAULT: "#F6F1E7", 700: "#F8F3EB", 400: "#F9F6EE", 200: "#FBF8F2" },
+            green: { DEFAULT: "#12B76A", 700: "#4FC68C", 400: "#96DEBB", 200: "#CAEFDD" },
+            red: { DEFAULT: "#F04438", 700: "#F47169", 400: "#F8ABA5", 200: "#FCD5D1" },
+            grey: { 100: "#F9FAFB", 200: "#F2F4F7", 300: "#EAECF0", 400: "#D0D5DD", 500: "#98A2B3", 600: "#667085", 700: "#475467", 800: "#344054", 900: "#222832", 950: "#0F0F0F" },
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    body { font-family: 'Montserrat', sans-serif; }
+    .token-section { @apply mb-16; }
+    .section-title { @apply text-2xl font-bold mb-6 text-grey-900 border-b border-grey-300 pb-3; }
+    .subsection-title { @apply text-lg font-bold mb-4 text-grey-800; }
+    .icon-grid { @apply grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-4; }
+    .icon-cell { @apply flex flex-col items-center gap-2 p-3 rounded-lg hover:bg-grey-100 transition cursor-default; }
+    .icon-cell i { @apply text-2xl text-grey-900; }
+    .icon-cell span { @apply text-[10px] text-grey-500 text-center leading-tight break-all; }
+  </style>
+</head>
+<body class="bg-white text-grey-900 p-8 max-w-7xl mx-auto">
+
+  <!-- Header -->
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold mb-2">Icons</h1>
+    <p class="text-grey-600 text-lg">Phosphor Icons - a flexible icon family for interfaces</p>
+    <nav class="mt-6 flex flex-wrap gap-3">
+      <a href="index.html" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Tokens</a>
+      <a href="components.html" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Components</a>
+      <a href="#weights" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Weights</a>
+      <a href="#sizes" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Sizes</a>
+      <a href="#colors" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Colors</a>
+      <a href="#common" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Common Icons</a>
+    </nav>
+  </header>
+
+  <!-- Usage -->
+  <section class="token-section">
+    <h2 class="section-title">Usage</h2>
+    <p class="text-sm text-grey-700 mb-4">Phosphor Icons are included via CDN. Use the <code class="bg-grey-100 px-1.5 py-0.5 rounded text-xs font-mono">&lt;i&gt;</code> tag with the appropriate class.</p>
+    <div class="bg-grey-100 rounded-lg p-4 mb-4">
+      <p class="text-xs font-mono text-grey-700 mb-2">CDN (include per weight):</p>
+      <code class="text-xs font-mono text-grey-600 break-all">https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/{weight}/style.css</code>
+    </div>
+    <div class="bg-grey-100 rounded-lg p-4">
+      <p class="text-xs font-mono text-grey-700 mb-2">HTML:</p>
+      <code class="text-xs font-mono text-grey-600">&lt;i class="ph ph-house"&gt;&lt;/i&gt;</code>
+      <span class="text-xs text-grey-500 ml-3">Regular weight</span><br/>
+      <code class="text-xs font-mono text-grey-600">&lt;i class="ph-bold ph-house"&gt;&lt;/i&gt;</code>
+      <span class="text-xs text-grey-500 ml-3">Bold weight</span><br/>
+      <code class="text-xs font-mono text-grey-600">&lt;i class="ph-fill ph-house"&gt;&lt;/i&gt;</code>
+      <span class="text-xs text-grey-500 ml-3">Fill weight</span>
+    </div>
+  </section>
+
+  <!-- Weights -->
+  <section id="weights" class="token-section">
+    <h2 class="section-title">6 Weights</h2>
+    <p class="text-sm text-grey-600 mb-6">Every icon is available in 6 weights. Use the weight prefix class to switch.</p>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6">
+      <!-- Thin -->
+      <div class="flex flex-col items-center gap-3 p-4 border border-grey-200 rounded-lg">
+        <i class="ph-thin ph-heart text-4xl"></i>
+        <span class="text-sm font-medium">Thin</span>
+        <code class="text-[10px] font-mono text-grey-500">ph-thin</code>
+      </div>
+      <!-- Light -->
+      <div class="flex flex-col items-center gap-3 p-4 border border-grey-200 rounded-lg">
+        <i class="ph-light ph-heart text-4xl"></i>
+        <span class="text-sm font-medium">Light</span>
+        <code class="text-[10px] font-mono text-grey-500">ph-light</code>
+      </div>
+      <!-- Regular -->
+      <div class="flex flex-col items-center gap-3 p-4 border border-grey-200 rounded-lg bg-grey-100">
+        <i class="ph ph-heart text-4xl"></i>
+        <span class="text-sm font-medium">Regular</span>
+        <code class="text-[10px] font-mono text-grey-500">ph</code>
+      </div>
+      <!-- Bold -->
+      <div class="flex flex-col items-center gap-3 p-4 border border-grey-200 rounded-lg">
+        <i class="ph-bold ph-heart text-4xl"></i>
+        <span class="text-sm font-medium">Bold</span>
+        <code class="text-[10px] font-mono text-grey-500">ph-bold</code>
+      </div>
+      <!-- Fill -->
+      <div class="flex flex-col items-center gap-3 p-4 border border-grey-200 rounded-lg">
+        <i class="ph-fill ph-heart text-4xl"></i>
+        <span class="text-sm font-medium">Fill</span>
+        <code class="text-[10px] font-mono text-grey-500">ph-fill</code>
+      </div>
+      <!-- Duotone -->
+      <div class="flex flex-col items-center gap-3 p-4 border border-grey-200 rounded-lg">
+        <i class="ph-duotone ph-heart text-4xl"></i>
+        <span class="text-sm font-medium">Duotone</span>
+        <code class="text-[10px] font-mono text-grey-500">ph-duotone</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sizes -->
+  <section id="sizes" class="token-section">
+    <h2 class="section-title">Sizes</h2>
+    <p class="text-sm text-grey-600 mb-6">Icons scale with <code class="bg-grey-100 px-1.5 py-0.5 rounded text-xs font-mono">font-size</code>. Use Tailwind text utilities or CSS.</p>
+
+    <div class="flex flex-wrap items-end gap-8">
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-bell text-xs"></i>
+        <span class="text-[10px] text-grey-500">12px</span>
+        <code class="text-[10px] font-mono text-grey-400">text-xs</code>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-bell text-sm"></i>
+        <span class="text-[10px] text-grey-500">14px</span>
+        <code class="text-[10px] font-mono text-grey-400">text-sm</code>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-bell text-base"></i>
+        <span class="text-[10px] text-grey-500">16px</span>
+        <code class="text-[10px] font-mono text-grey-400">text-base</code>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-bell text-xl"></i>
+        <span class="text-[10px] text-grey-500">20px</span>
+        <code class="text-[10px] font-mono text-grey-400">text-xl</code>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-bell text-2xl"></i>
+        <span class="text-[10px] text-grey-500">24px</span>
+        <code class="text-[10px] font-mono text-grey-400">text-2xl</code>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-bell text-3xl"></i>
+        <span class="text-[10px] text-grey-500">30px</span>
+        <code class="text-[10px] font-mono text-grey-400">text-3xl</code>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-bell text-4xl"></i>
+        <span class="text-[10px] text-grey-500">36px</span>
+        <code class="text-[10px] font-mono text-grey-400">text-4xl</code>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-bell text-5xl"></i>
+        <span class="text-[10px] text-grey-500">48px</span>
+        <code class="text-[10px] font-mono text-grey-400">text-5xl</code>
+      </div>
+    </div>
+  </section>
+
+  <!-- Colors -->
+  <section id="colors" class="token-section">
+    <h2 class="section-title">Colors</h2>
+    <p class="text-sm text-grey-600 mb-6">Icons inherit <code class="bg-grey-100 px-1.5 py-0.5 rounded text-xs font-mono">color</code> from CSS. Use Tailwind text color utilities.</p>
+
+    <div class="flex flex-wrap items-center gap-6">
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-star text-3xl text-grey-900"></i>
+        <span class="text-[10px] text-grey-500">Default</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-star text-3xl text-grey-500"></i>
+        <span class="text-[10px] text-grey-500">Muted</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-star text-3xl text-sunflower"></i>
+        <span class="text-[10px] text-grey-500">Brand</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-star text-3xl text-marigold"></i>
+        <span class="text-[10px] text-grey-500">Secondary</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-star text-3xl text-bluebell"></i>
+        <span class="text-[10px] text-grey-500">Tertiary</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-star text-3xl text-green"></i>
+        <span class="text-[10px] text-grey-500">Success</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-star text-3xl text-red"></i>
+        <span class="text-[10px] text-grey-500">Error</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <i class="ph ph-star text-3xl text-vibrant-orange"></i>
+        <span class="text-[10px] text-grey-500">Warning</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 bg-grey-900 rounded-lg p-3">
+        <i class="ph ph-star text-3xl text-white"></i>
+        <span class="text-[10px] text-grey-400">Inverted</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Icons -->
+  <section id="common" class="token-section">
+    <h2 class="section-title">Common Icons</h2>
+    <p class="text-sm text-grey-600 mb-6">A selection of commonly used icons. Browse the full set at <a href="https://phosphoricons.com" class="text-bluebell underline" target="_blank">phosphoricons.com</a>.</p>
+
+    <!-- Navigation -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Navigation</h3>
+      <div class="icon-grid">
+        <div class="icon-cell"><i class="ph ph-house"></i><span>house</span></div>
+        <div class="icon-cell"><i class="ph ph-magnifying-glass"></i><span>magnifying-glass</span></div>
+        <div class="icon-cell"><i class="ph ph-arrow-left"></i><span>arrow-left</span></div>
+        <div class="icon-cell"><i class="ph ph-arrow-right"></i><span>arrow-right</span></div>
+        <div class="icon-cell"><i class="ph ph-caret-down"></i><span>caret-down</span></div>
+        <div class="icon-cell"><i class="ph ph-caret-up"></i><span>caret-up</span></div>
+        <div class="icon-cell"><i class="ph ph-caret-left"></i><span>caret-left</span></div>
+        <div class="icon-cell"><i class="ph ph-caret-right"></i><span>caret-right</span></div>
+        <div class="icon-cell"><i class="ph ph-x"></i><span>x</span></div>
+        <div class="icon-cell"><i class="ph ph-list"></i><span>list</span></div>
+        <div class="icon-cell"><i class="ph ph-dots-three"></i><span>dots-three</span></div>
+        <div class="icon-cell"><i class="ph ph-dots-three-vertical"></i><span>dots-three-vertical</span></div>
+        <div class="icon-cell"><i class="ph ph-funnel"></i><span>funnel</span></div>
+        <div class="icon-cell"><i class="ph ph-sliders-horizontal"></i><span>sliders-horizontal</span></div>
+        <div class="icon-cell"><i class="ph ph-arrows-clockwise"></i><span>arrows-clockwise</span></div>
+        <div class="icon-cell"><i class="ph ph-sign-out"></i><span>sign-out</span></div>
+        <div class="icon-cell"><i class="ph ph-gear"></i><span>gear</span></div>
+        <div class="icon-cell"><i class="ph ph-squares-four"></i><span>squares-four</span></div>
+        <div class="icon-cell"><i class="ph ph-sidebar"></i><span>sidebar</span></div>
+        <div class="icon-cell"><i class="ph ph-link"></i><span>link</span></div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Actions</h3>
+      <div class="icon-grid">
+        <div class="icon-cell"><i class="ph ph-plus"></i><span>plus</span></div>
+        <div class="icon-cell"><i class="ph ph-minus"></i><span>minus</span></div>
+        <div class="icon-cell"><i class="ph ph-pencil-simple"></i><span>pencil-simple</span></div>
+        <div class="icon-cell"><i class="ph ph-trash"></i><span>trash</span></div>
+        <div class="icon-cell"><i class="ph ph-copy"></i><span>copy</span></div>
+        <div class="icon-cell"><i class="ph ph-download-simple"></i><span>download-simple</span></div>
+        <div class="icon-cell"><i class="ph ph-upload-simple"></i><span>upload-simple</span></div>
+        <div class="icon-cell"><i class="ph ph-share"></i><span>share</span></div>
+        <div class="icon-cell"><i class="ph ph-export"></i><span>export</span></div>
+        <div class="icon-cell"><i class="ph ph-bookmark-simple"></i><span>bookmark-simple</span></div>
+        <div class="icon-cell"><i class="ph ph-heart"></i><span>heart</span></div>
+        <div class="icon-cell"><i class="ph ph-star"></i><span>star</span></div>
+        <div class="icon-cell"><i class="ph ph-thumbs-up"></i><span>thumbs-up</span></div>
+        <div class="icon-cell"><i class="ph ph-check"></i><span>check</span></div>
+        <div class="icon-cell"><i class="ph ph-check-circle"></i><span>check-circle</span></div>
+        <div class="icon-cell"><i class="ph ph-eye"></i><span>eye</span></div>
+        <div class="icon-cell"><i class="ph ph-eye-slash"></i><span>eye-slash</span></div>
+        <div class="icon-cell"><i class="ph ph-lock"></i><span>lock</span></div>
+        <div class="icon-cell"><i class="ph ph-lock-open"></i><span>lock-open</span></div>
+        <div class="icon-cell"><i class="ph ph-power"></i><span>power</span></div>
+      </div>
+    </div>
+
+    <!-- Communication -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Communication</h3>
+      <div class="icon-grid">
+        <div class="icon-cell"><i class="ph ph-envelope-simple"></i><span>envelope-simple</span></div>
+        <div class="icon-cell"><i class="ph ph-chat-circle"></i><span>chat-circle</span></div>
+        <div class="icon-cell"><i class="ph ph-chat-dots"></i><span>chat-dots</span></div>
+        <div class="icon-cell"><i class="ph ph-phone"></i><span>phone</span></div>
+        <div class="icon-cell"><i class="ph ph-bell"></i><span>bell</span></div>
+        <div class="icon-cell"><i class="ph ph-bell-ringing"></i><span>bell-ringing</span></div>
+        <div class="icon-cell"><i class="ph ph-paper-plane-tilt"></i><span>paper-plane-tilt</span></div>
+        <div class="icon-cell"><i class="ph ph-megaphone"></i><span>megaphone</span></div>
+        <div class="icon-cell"><i class="ph ph-at"></i><span>at</span></div>
+        <div class="icon-cell"><i class="ph ph-globe"></i><span>globe</span></div>
+      </div>
+    </div>
+
+    <!-- Content & Media -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Content & Media</h3>
+      <div class="icon-grid">
+        <div class="icon-cell"><i class="ph ph-image"></i><span>image</span></div>
+        <div class="icon-cell"><i class="ph ph-camera"></i><span>camera</span></div>
+        <div class="icon-cell"><i class="ph ph-file"></i><span>file</span></div>
+        <div class="icon-cell"><i class="ph ph-file-text"></i><span>file-text</span></div>
+        <div class="icon-cell"><i class="ph ph-folder"></i><span>folder</span></div>
+        <div class="icon-cell"><i class="ph ph-folder-open"></i><span>folder-open</span></div>
+        <div class="icon-cell"><i class="ph ph-calendar"></i><span>calendar</span></div>
+        <div class="icon-cell"><i class="ph ph-clock"></i><span>clock</span></div>
+        <div class="icon-cell"><i class="ph ph-map-pin"></i><span>map-pin</span></div>
+        <div class="icon-cell"><i class="ph ph-tag"></i><span>tag</span></div>
+      </div>
+    </div>
+
+    <!-- People & User -->
+    <div class="mb-10">
+      <h3 class="subsection-title">People & User</h3>
+      <div class="icon-grid">
+        <div class="icon-cell"><i class="ph ph-user"></i><span>user</span></div>
+        <div class="icon-cell"><i class="ph ph-user-circle"></i><span>user-circle</span></div>
+        <div class="icon-cell"><i class="ph ph-users"></i><span>users</span></div>
+        <div class="icon-cell"><i class="ph ph-user-plus"></i><span>user-plus</span></div>
+        <div class="icon-cell"><i class="ph ph-user-minus"></i><span>user-minus</span></div>
+        <div class="icon-cell"><i class="ph ph-user-gear"></i><span>user-gear</span></div>
+        <div class="icon-cell"><i class="ph ph-identification-card"></i><span>identification-card</span></div>
+        <div class="icon-cell"><i class="ph ph-smiley"></i><span>smiley</span></div>
+        <div class="icon-cell"><i class="ph ph-hand-waving"></i><span>hand-waving</span></div>
+        <div class="icon-cell"><i class="ph ph-hand-pointing"></i><span>hand-pointing</span></div>
+      </div>
+    </div>
+
+    <!-- Status & Feedback -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Status & Feedback</h3>
+      <div class="icon-grid">
+        <div class="icon-cell"><i class="ph ph-info"></i><span>info</span></div>
+        <div class="icon-cell"><i class="ph ph-warning"></i><span>warning</span></div>
+        <div class="icon-cell"><i class="ph ph-warning-circle"></i><span>warning-circle</span></div>
+        <div class="icon-cell"><i class="ph ph-x-circle"></i><span>x-circle</span></div>
+        <div class="icon-cell"><i class="ph ph-question"></i><span>question</span></div>
+        <div class="icon-cell"><i class="ph ph-prohibit"></i><span>prohibit</span></div>
+        <div class="icon-cell"><i class="ph ph-spinner"></i><span>spinner</span></div>
+        <div class="icon-cell"><i class="ph ph-circle-notch"></i><span>circle-notch</span></div>
+        <div class="icon-cell"><i class="ph ph-shield-check"></i><span>shield-check</span></div>
+        <div class="icon-cell"><i class="ph ph-lightning"></i><span>lightning</span></div>
+      </div>
+    </div>
+
+    <!-- Commerce -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Commerce</h3>
+      <div class="icon-grid">
+        <div class="icon-cell"><i class="ph ph-shopping-cart"></i><span>shopping-cart</span></div>
+        <div class="icon-cell"><i class="ph ph-shopping-bag"></i><span>shopping-bag</span></div>
+        <div class="icon-cell"><i class="ph ph-storefront"></i><span>storefront</span></div>
+        <div class="icon-cell"><i class="ph ph-credit-card"></i><span>credit-card</span></div>
+        <div class="icon-cell"><i class="ph ph-wallet"></i><span>wallet</span></div>
+        <div class="icon-cell"><i class="ph ph-receipt"></i><span>receipt</span></div>
+        <div class="icon-cell"><i class="ph ph-currency-dollar"></i><span>currency-dollar</span></div>
+        <div class="icon-cell"><i class="ph ph-percent"></i><span>percent</span></div>
+        <div class="icon-cell"><i class="ph ph-package"></i><span>package</span></div>
+        <div class="icon-cell"><i class="ph ph-truck"></i><span>truck</span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-grey-300 pt-6 mt-16 text-sm text-grey-500">
+    <p>
+      Icons from <a href="https://phosphoricons.com" class="text-bluebell underline" target="_blank">Phosphor Icons</a> (MIT License).
+      Browse all 1000+ icons at <a href="https://phosphoricons.com" class="text-bluebell underline" target="_blank">phosphoricons.com</a>.
+    </p>
+  </footer>
+
+</body>
+</html>
