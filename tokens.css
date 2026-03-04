@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Foundation Design System - CSS Custom Properties
+   Extracted from Figma: Foundation
+   ========================================================================== */
+
+:root {
+  /* -----------------------------------------------------------------------
+     CORE COLOR TOKENS
+     ----------------------------------------------------------------------- */
+
+  /* Sunflower */
+  --color-sunflower: #F8C642;
+  --color-sunflower-700: #FFDB7E;
+  --color-sunflower-400: #FCE4AA;
+  --color-sunflower-200: #FEF2D4;
+
+  /* Marigold */
+  --color-marigold: #E88239;
+  --color-marigold-700: #EC9D69;
+  --color-marigold-400: #F5C6A7;
+  --color-marigold-200: #F9E2D1;
+
+  /* Bluebell */
+  --color-bluebell: #6071D7;
+  --color-bluebell-700: #8491DF;
+  --color-bluebell-400: #B7BFEC;
+  --color-bluebell-200: #DADFF6;
+
+  /* Signal Yellow */
+  --color-signal-yellow: #FFD400;
+  --color-signal-yellow-700: #FFE066;
+  --color-signal-yellow-400: #FFF0B3;
+  --color-signal-yellow-200: #FFF9E6;
+
+  /* Vibrant Orange */
+  --color-vibrant-orange: #F25C2A;
+  --color-vibrant-orange-700: #F78A63;
+  --color-vibrant-orange-400: #FBC3AE;
+  --color-vibrant-orange-200: #FDE8DF;
+
+  /* Electric Blue */
+  --color-electric-blue: #0D2BFF;
+  --color-electric-blue-700: #4D63FF;
+  --color-electric-blue-400: #9AA6FF;
+  --color-electric-blue-200: #E4E8FF;
+
+  /* Cream */
+  --color-cream: #F6F1E7;
+  --color-cream-700: #F8F3EB;
+  --color-cream-400: #F9F6EE;
+  --color-cream-200: #FBF8F2;
+
+  /* Green */
+  --color-green: #12B76A;
+  --color-green-700: #4FC68C;
+  --color-green-400: #96DEBB;
+  --color-green-200: #CAEFDD;
+
+  /* Red */
+  --color-red: #F04438;
+  --color-red-700: #F47169;
+  --color-red-400: #F8ABA5;
+  --color-red-200: #FCD5D1;
+
+  /* Neutrals */
+  --color-grey-100: #F9FAFB;
+  --color-grey-200: #F2F4F7;
+  --color-grey-300: #EAECF0;
+  --color-grey-400: #D0D5DD;
+  --color-grey-500: #98A2B3;
+  --color-grey-600: #667085;
+  --color-grey-700: #475467;
+  --color-grey-800: #344054;
+  --color-grey-900: #222832;
+  --color-grey-950: #0F0F0F;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+
+  /* -----------------------------------------------------------------------
+     SYSTEM TOKENS - Background
+     ----------------------------------------------------------------------- */
+  --bg-brand-primary: var(--color-sunflower);
+  --bg-brand-primary-700: var(--color-sunflower-700);
+  --bg-brand-primary-400: var(--color-sunflower-400);
+  --bg-brand-primary-200: var(--color-sunflower-200);
+  --bg-brand-secondary: var(--color-marigold);
+  --bg-brand-secondary-700: var(--color-marigold-700);
+  --bg-brand-secondary-400: var(--color-marigold-400);
+  --bg-brand-secondary-200: var(--color-marigold-200);
+  --bg-brand-tertiary: var(--color-bluebell);
+  --bg-brand-tertiary-700: var(--color-bluebell-700);
+  --bg-brand-tertiary-400: var(--color-bluebell-400);
+  --bg-brand-tertiary-200: var(--color-bluebell-200);
+  --bg-default: var(--color-white);
+  --bg-default-inverted: var(--color-black);
+  --bg-success: var(--color-green);
+  --bg-success-700: var(--color-green-700);
+  --bg-success-400: var(--color-green-400);
+  --bg-success-200: var(--color-green-200);
+  --bg-error: var(--color-red);
+  --bg-error-700: var(--color-red-700);
+  --bg-error-400: var(--color-red-400);
+  --bg-error-200: var(--color-red-200);
+
+  /* -----------------------------------------------------------------------
+     SYSTEM TOKENS - Text
+     ----------------------------------------------------------------------- */
+  --text-default: var(--color-black);
+  --text-muted: var(--color-grey-600);
+  --text-default-inverted: var(--color-white);
+  --text-disabled: var(--color-grey-500);
+  --text-success: var(--color-green);
+  --text-error: var(--color-red);
+  --text-brand-primary: var(--color-sunflower);
+
+  /* -----------------------------------------------------------------------
+     SYSTEM TOKENS - Icon
+     ----------------------------------------------------------------------- */
+  --icon-default: var(--color-black);
+  --icon-muted: var(--color-grey-600);
+  --icon-default-inverted: var(--color-white);
+  --icon-disabled: var(--color-grey-500);
+  --icon-success: var(--color-green);
+  --icon-error: var(--color-red);
+  --icon-brand-primary: var(--color-sunflower);
+
+  /* -----------------------------------------------------------------------
+     SYSTEM TOKENS - Border
+     ----------------------------------------------------------------------- */
+  --border-default: var(--color-black);
+  --border-muted: var(--color-grey-500);
+  --border-default-inverted: var(--color-white);
+  --border-disabled: var(--color-grey-500);
+  --border-success: var(--color-green);
+  --border-error: var(--color-red);
+  --border-brand-primary: var(--color-sunflower);
+
+  /* -----------------------------------------------------------------------
+     SPACING TOKENS
+     ----------------------------------------------------------------------- */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 40px;
+  --space-xxxl: 48px;
+
+  /* -----------------------------------------------------------------------
+     RADIUS TOKENS
+     ----------------------------------------------------------------------- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 24px;
+  --radius-full: 999px;
+
+  /* -----------------------------------------------------------------------
+     SHADOW TOKENS
+     ----------------------------------------------------------------------- */
+  --shadow: 0 0 16px rgba(0, 0, 0, 0.08);
+
+  /* -----------------------------------------------------------------------
+     TYPOGRAPHY TOKENS
+     ----------------------------------------------------------------------- */
+  --font-family: 'Montserrat', sans-serif;
+
+  /* Font Sizes */
+  --font-size-title-1: 36px;
+  --font-size-title-2: 28px;
+  --font-size-title-3: 24px;
+  --font-size-title-4: 20px;
+  --font-size-heading: 18px;
+  --font-size-subheading: 18px;
+  --font-size-body: 16px;
+  --font-size-footnote: 14px;
+  --font-size-caption: 12px;
+  --font-size-overline: 10px;
+
+  /* Line Heights */
+  --line-height-title-1: 1.3;
+  --line-height-title-2: 1.3;
+  --line-height-title-3: 1.4;
+  --line-height-title-4: 1.4;
+  --line-height-heading: 1.4;
+  --line-height-body: 1.5;
+
+  /* Font Weights */
+  --font-weight-light: 400;
+  --font-weight-regular: 500;
+  --font-weight-emphasis: 700;
+}

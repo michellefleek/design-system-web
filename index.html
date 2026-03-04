@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Foundation Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Montserrat", "sans-serif"] },
+          colors: {
+            sunflower: { DEFAULT: "#F8C642", 700: "#FFDB7E", 400: "#FCE4AA", 200: "#FEF2D4" },
+            marigold: { DEFAULT: "#E88239", 700: "#EC9D69", 400: "#F5C6A7", 200: "#F9E2D1" },
+            bluebell: { DEFAULT: "#6071D7", 700: "#8491DF", 400: "#B7BFEC", 200: "#DADFF6" },
+            "signal-yellow": { DEFAULT: "#FFD400", 700: "#FFE066", 400: "#FFF0B3", 200: "#FFF9E6" },
+            "vibrant-orange": { DEFAULT: "#F25C2A", 700: "#F78A63", 400: "#FBC3AE", 200: "#FDE8DF" },
+            "electric-blue": { DEFAULT: "#0D2BFF", 700: "#4D63FF", 400: "#9AA6FF", 200: "#E4E8FF" },
+            cream: { DEFAULT: "#F6F1E7", 700: "#F8F3EB", 400: "#F9F6EE", 200: "#FBF8F2" },
+            green: { DEFAULT: "#12B76A", 700: "#4FC68C", 400: "#96DEBB", 200: "#CAEFDD" },
+            red: { DEFAULT: "#F04438", 700: "#F47169", 400: "#F8ABA5", 200: "#FCD5D1" },
+            grey: { 100: "#F9FAFB", 200: "#F2F4F7", 300: "#EAECF0", 400: "#D0D5DD", 500: "#98A2B3", 600: "#667085", 700: "#475467", 800: "#344054", 900: "#222832", 950: "#0F0F0F" },
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    body { font-family: 'Montserrat', sans-serif; }
+    .token-section { @apply mb-16; }
+    .section-title { @apply text-2xl font-bold mb-6 text-grey-900 border-b border-grey-300 pb-3; }
+    .subsection-title { @apply text-lg font-bold mb-4 text-grey-800; }
+    .swatch { @apply w-20 h-20 rounded-lg shadow-sm border border-grey-200 flex-shrink-0; }
+    .swatch-label { @apply text-xs text-grey-600 mt-2 text-center; }
+    .swatch-hex { @apply text-[10px] font-mono text-grey-500 text-center; }
+  </style>
+</head>
+<body class="bg-white text-grey-900 p-8 max-w-7xl mx-auto">
+
+  <!-- Header -->
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold mb-2">Foundation Design System</h1>
+    <p class="text-grey-600 text-lg">Style tokens extracted from Figma</p>
+    <nav class="mt-6 flex flex-wrap gap-3">
+      <a href="#colors" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Colors</a>
+      <a href="#typography" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Typography</a>
+      <a href="#spacing" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Spacing</a>
+      <a href="#radius" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Radius</a>
+      <a href="#shadows" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Shadows</a>
+    </nav>
+  </header>
+
+  <!-- ===== COLORS ===== -->
+  <section id="colors" class="token-section">
+    <h2 class="section-title">Colors</h2>
+
+    <!-- Sunflower -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Sunflower</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F8C642"></div>
+          <span class="swatch-label">Sunflower</span>
+          <span class="swatch-hex">#F8C642</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FFDB7E"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#FFDB7E</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FCE4AA"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#FCE4AA</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FEF2D4"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#FEF2D4</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Marigold -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Marigold</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#E88239"></div>
+          <span class="swatch-label">Marigold</span>
+          <span class="swatch-hex">#E88239</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#EC9D69"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#EC9D69</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F5C6A7"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#F5C6A7</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F9E2D1"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#F9E2D1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bluebell -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Bluebell</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#6071D7"></div>
+          <span class="swatch-label">Bluebell</span>
+          <span class="swatch-hex">#6071D7</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#8491DF"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#8491DF</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#B7BFEC"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#B7BFEC</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#DADFF6"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#DADFF6</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signal Yellow -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Signal Yellow</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FFD400"></div>
+          <span class="swatch-label">Signal Yellow</span>
+          <span class="swatch-hex">#FFD400</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FFE066"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#FFE066</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FFF0B3"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#FFF0B3</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FFF9E6"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#FFF9E6</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vibrant Orange -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Vibrant Orange</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F25C2A"></div>
+          <span class="swatch-label">Vibrant Orange</span>
+          <span class="swatch-hex">#F25C2A</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F78A63"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#F78A63</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FBC3AE"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#FBC3AE</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FDE8DF"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#FDE8DF</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Electric Blue -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Electric Blue</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#0D2BFF"></div>
+          <span class="swatch-label">Electric Blue</span>
+          <span class="swatch-hex">#0D2BFF</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#4D63FF"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#4D63FF</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#9AA6FF"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#9AA6FF</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#E4E8FF"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#E4E8FF</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cream -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Cream</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F6F1E7"></div>
+          <span class="swatch-label">Cream</span>
+          <span class="swatch-hex">#F6F1E7</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F8F3EB"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#F8F3EB</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F9F6EE"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#F9F6EE</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FBF8F2"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#FBF8F2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Green -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Green</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#12B76A"></div>
+          <span class="swatch-label">Green</span>
+          <span class="swatch-hex">#12B76A</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#4FC68C"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#4FC68C</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#96DEBB"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#96DEBB</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#CAEFDD"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#CAEFDD</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Red -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Red</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F04438"></div>
+          <span class="swatch-label">Red</span>
+          <span class="swatch-hex">#F04438</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F47169"></div>
+          <span class="swatch-label">700</span>
+          <span class="swatch-hex">#F47169</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#F8ABA5"></div>
+          <span class="swatch-label">400</span>
+          <span class="swatch-hex">#F8ABA5</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="swatch" style="background:#FCD5D1"></div>
+          <span class="swatch-label">200</span>
+          <span class="swatch-hex">#FCD5D1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Neutrals -->
+    <div class="mb-8">
+      <h3 class="subsection-title">Neutrals</h3>
+      <div class="flex flex-wrap gap-6">
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#F9FAFB"></div><span class="swatch-label">Grey 100</span><span class="swatch-hex">#F9FAFB</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#F2F4F7"></div><span class="swatch-label">Grey 200</span><span class="swatch-hex">#F2F4F7</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#EAECF0"></div><span class="swatch-label">Grey 300</span><span class="swatch-hex">#EAECF0</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#D0D5DD"></div><span class="swatch-label">Grey 400</span><span class="swatch-hex">#D0D5DD</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#98A2B3"></div><span class="swatch-label">Grey 500</span><span class="swatch-hex">#98A2B3</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#667085"></div><span class="swatch-label">Grey 600</span><span class="swatch-hex">#667085</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#475467"></div><span class="swatch-label">Grey 700</span><span class="swatch-hex">#475467</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#344054"></div><span class="swatch-label">Grey 800</span><span class="swatch-hex">#344054</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#222832"></div><span class="swatch-label">Grey 900</span><span class="swatch-hex">#222832</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#0F0F0F"></div><span class="swatch-label">Grey 950</span><span class="swatch-hex">#0F0F0F</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#000000"></div><span class="swatch-label">Black</span><span class="swatch-hex">#000000</span></div>
+        <div class="flex flex-col items-center"><div class="swatch" style="background:#FFFFFF"></div><span class="swatch-label">White</span><span class="swatch-hex">#FFFFFF</span></div>
+      </div>
+    </div>
+
+    <!-- System Tokens -->
+    <div class="mb-8">
+      <h3 class="subsection-title">System Tokens - Text</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead><tr class="border-b border-grey-300"><th class="text-left py-2 text-grey-600 font-medium">Token</th><th class="text-left py-2 text-grey-600 font-medium">Value</th><th class="text-left py-2 text-grey-600 font-medium">Preview</th><th class="text-left py-2 text-grey-600 font-medium">CSS Variable</th></tr></thead>
+          <tbody>
+            <tr class="border-b border-grey-200"><td class="py-3">Default</td><td class="font-mono text-xs">#000000</td><td><div class="w-6 h-6 rounded" style="background:#000000"></div></td><td class="font-mono text-xs text-grey-500">--text-default</td></tr>
+            <tr class="border-b border-grey-200"><td class="py-3">Muted</td><td class="font-mono text-xs">#667085</td><td><div class="w-6 h-6 rounded" style="background:#667085"></div></td><td class="font-mono text-xs text-grey-500">--text-muted</td></tr>
+            <tr class="border-b border-grey-200"><td class="py-3">Inverted</td><td class="font-mono text-xs">#FFFFFF</td><td><div class="w-6 h-6 rounded border border-grey-300" style="background:#FFFFFF"></div></td><td class="font-mono text-xs text-grey-500">--text-default-inverted</td></tr>
+            <tr class="border-b border-grey-200"><td class="py-3">Disabled</td><td class="font-mono text-xs">#98A2B3</td><td><div class="w-6 h-6 rounded" style="background:#98A2B3"></div></td><td class="font-mono text-xs text-grey-500">--text-disabled</td></tr>
+            <tr class="border-b border-grey-200"><td class="py-3">Success</td><td class="font-mono text-xs">#12B76A</td><td><div class="w-6 h-6 rounded" style="background:#12B76A"></div></td><td class="font-mono text-xs text-grey-500">--text-success</td></tr>
+            <tr class="border-b border-grey-200"><td class="py-3">Error</td><td class="font-mono text-xs">#F04438</td><td><div class="w-6 h-6 rounded" style="background:#F04438"></div></td><td class="font-mono text-xs text-grey-500">--text-error</td></tr>
+            <tr class="border-b border-grey-200"><td class="py-3">Brand Primary</td><td class="font-mono text-xs">#F8C642</td><td><div class="w-6 h-6 rounded" style="background:#F8C642"></div></td><td class="font-mono text-xs text-grey-500">--text-brand-primary</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TYPOGRAPHY ===== -->
+  <section id="typography" class="token-section">
+    <h2 class="section-title">Typography</h2>
+    <p class="text-grey-600 mb-8">Font family: <span class="font-mono bg-grey-100 px-2 py-1 rounded">Montserrat</span></p>
+
+    <!-- Headlines -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Headlines</h3>
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-grey-300"><th class="text-left py-2 text-grey-600 font-medium">Name</th><th class="text-left py-2 text-grey-600 font-medium">Example</th><th class="text-left py-2 text-grey-600 font-medium">Size</th><th class="text-left py-2 text-grey-600 font-medium">Weight</th><th class="text-left py-2 text-grey-600 font-medium">Line Height</th></tr></thead>
+        <tbody>
+          <tr class="border-b border-grey-200"><td class="py-4">Title 1</td><td style="font-size:36px;font-weight:700;line-height:1.3">Aa</td><td class="font-mono text-xs">36px</td><td>Bold (700)</td><td>130%</td></tr>
+          <tr class="border-b border-grey-200"><td class="py-4">Title 2</td><td style="font-size:28px;font-weight:700;line-height:1.3">Aa</td><td class="font-mono text-xs">28px</td><td>Bold (700)</td><td>130%</td></tr>
+          <tr class="border-b border-grey-200"><td class="py-4">Title 3</td><td style="font-size:24px;font-weight:700;line-height:1.4">Aa</td><td class="font-mono text-xs">24px</td><td>Bold (700)</td><td>140%</td></tr>
+          <tr class="border-b border-grey-200"><td class="py-4">Title 4</td><td style="font-size:20px;font-weight:700;line-height:1.4">Aa</td><td class="font-mono text-xs">20px</td><td>Bold (700)</td><td>140%</td></tr>
+          <tr class="border-b border-grey-200"><td class="py-4">Heading</td><td style="font-size:18px;font-weight:700;line-height:1.4">Aa</td><td class="font-mono text-xs">18px</td><td>Bold (700)</td><td>140%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Body Styles -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Body Styles</h3>
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-grey-300"><th class="text-left py-2 text-grey-600 font-medium">Name</th><th class="text-left py-2 text-grey-600 font-medium">Example</th><th class="text-left py-2 text-grey-600 font-medium">Size</th><th class="text-left py-2 text-grey-600 font-medium">Weights</th><th class="text-left py-2 text-grey-600 font-medium">Line Height</th></tr></thead>
+        <tbody>
+          <tr class="border-b border-grey-200">
+            <td class="py-4">Subheading</td>
+            <td>
+              <span style="font-size:18px;font-weight:400;line-height:1.5">Light</span>
+              <span style="font-size:18px;font-weight:500;line-height:1.5" class="ml-3">Regular</span>
+              <span style="font-size:18px;font-weight:700;line-height:1.5" class="ml-3">Emphasis</span>
+            </td>
+            <td class="font-mono text-xs">18px</td><td>400 / 500 / 700</td><td>150%</td>
+          </tr>
+          <tr class="border-b border-grey-200">
+            <td class="py-4">Body</td>
+            <td>
+              <span style="font-size:16px;font-weight:400;line-height:1.5">Light</span>
+              <span style="font-size:16px;font-weight:500;line-height:1.5" class="ml-3">Regular</span>
+              <span style="font-size:16px;font-weight:700;line-height:1.5" class="ml-3">Emphasis</span>
+            </td>
+            <td class="font-mono text-xs">16px</td><td>400 / 500 / 700</td><td>150%</td>
+          </tr>
+          <tr class="border-b border-grey-200">
+            <td class="py-4">Footnote</td>
+            <td>
+              <span style="font-size:14px;font-weight:400;line-height:1.5">Light</span>
+              <span style="font-size:14px;font-weight:500;line-height:1.5" class="ml-3">Regular</span>
+              <span style="font-size:14px;font-weight:700;line-height:1.5" class="ml-3">Emphasis</span>
+            </td>
+            <td class="font-mono text-xs">14px</td><td>400 / 500 / 700</td><td>150%</td>
+          </tr>
+          <tr class="border-b border-grey-200">
+            <td class="py-4">Caption</td>
+            <td>
+              <span style="font-size:12px;font-weight:400;line-height:1.5">Light</span>
+              <span style="font-size:12px;font-weight:500;line-height:1.5" class="ml-3">Regular</span>
+              <span style="font-size:12px;font-weight:700;line-height:1.5" class="ml-3">Emphasis</span>
+            </td>
+            <td class="font-mono text-xs">12px</td><td>400 / 500 / 700</td><td>150%</td>
+          </tr>
+          <tr class="border-b border-grey-200">
+            <td class="py-4">Overline</td>
+            <td>
+              <span style="font-size:10px;font-weight:400;line-height:1.5">Light</span>
+              <span style="font-size:10px;font-weight:500;line-height:1.5" class="ml-3">Regular</span>
+              <span style="font-size:10px;font-weight:700;line-height:1.5" class="ml-3">Emphasis</span>
+            </td>
+            <td class="font-mono text-xs">10px</td><td>400 / 500 / 700</td><td>150%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="text-xs text-grey-500 mt-3">Each body style also has italic variants for all three weights.</p>
+    </div>
+  </section>
+
+  <!-- ===== SPACING ===== -->
+  <section id="spacing" class="token-section">
+    <h2 class="section-title">Spacing</h2>
+    <div class="space-y-4">
+      <div class="flex items-center gap-6"><span class="w-24 text-sm font-medium">Space-xxs</span><div class="h-6 bg-sunflower rounded" style="width:4px"></div><span class="text-sm font-mono text-grey-500">4px</span><span class="text-xs text-grey-400 ml-4">Text gap</span></div>
+      <div class="flex items-center gap-6"><span class="w-24 text-sm font-medium">Space-xs</span><div class="h-6 bg-sunflower rounded" style="width:8px"></div><span class="text-sm font-mono text-grey-500">8px</span><span class="text-xs text-grey-400 ml-4">Heading description gap</span></div>
+      <div class="flex items-center gap-6"><span class="w-24 text-sm font-medium">Space-sm</span><div class="h-6 bg-sunflower rounded" style="width:12px"></div><span class="text-sm font-mono text-grey-500">12px</span><span class="text-xs text-grey-400 ml-4">Content internal gap</span></div>
+      <div class="flex items-center gap-6"><span class="w-24 text-sm font-medium">Space-md</span><div class="h-6 bg-sunflower rounded" style="width:16px"></div><span class="text-sm font-mono text-grey-500">16px</span><span class="text-xs text-grey-400 ml-4">Default margins, page left/right margin</span></div>
+      <div class="flex items-center gap-6"><span class="w-24 text-sm font-medium">Space-lg</span><div class="h-6 bg-sunflower rounded" style="width:24px"></div><span class="text-sm font-mono text-grey-500">24px</span><span class="text-xs text-grey-400 ml-4">Content separation</span></div>
+      <div class="flex items-center gap-6"><span class="w-24 text-sm font-medium">Space-xl</span><div class="h-6 bg-sunflower rounded" style="width:32px"></div><span class="text-sm font-mono text-grey-500">32px</span><span class="text-xs text-grey-400 ml-4">Section gap</span></div>
+      <div class="flex items-center gap-6"><span class="w-24 text-sm font-medium">Space-xxl</span><div class="h-6 bg-sunflower rounded" style="width:40px"></div><span class="text-sm font-mono text-grey-500">40px</span><span class="text-xs text-grey-400 ml-4">Section gap on web, form section gap on mobile</span></div>
+      <div class="flex items-center gap-6"><span class="w-24 text-sm font-medium">Space-xxxl</span><div class="h-6 bg-sunflower rounded" style="width:48px"></div><span class="text-sm font-mono text-grey-500">48px</span><span class="text-xs text-grey-400 ml-4">Popup margins</span></div>
+    </div>
+  </section>
+
+  <!-- ===== RADIUS ===== -->
+  <section id="radius" class="token-section">
+    <h2 class="section-title">Radius</h2>
+    <div class="flex flex-wrap gap-8">
+      <div class="flex flex-col items-center">
+        <div class="w-20 h-20 bg-sunflower" style="border-radius:2px"></div>
+        <span class="text-sm font-medium mt-2">Radius-xs</span>
+        <span class="text-xs font-mono text-grey-500">2px</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-20 h-20 bg-sunflower" style="border-radius:4px"></div>
+        <span class="text-sm font-medium mt-2">Radius-sm</span>
+        <span class="text-xs font-mono text-grey-500">4px</span>
+        <span class="text-xs text-grey-400">Button, Card, Banner</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-20 h-20 bg-sunflower" style="border-radius:8px"></div>
+        <span class="text-sm font-medium mt-2">Radius-md</span>
+        <span class="text-xs font-mono text-grey-500">8px</span>
+        <span class="text-xs text-grey-400">Bigger cards</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-20 h-20 bg-sunflower" style="border-radius:12px"></div>
+        <span class="text-sm font-medium mt-2">Radius-lg</span>
+        <span class="text-xs font-mono text-grey-500">12px</span>
+        <span class="text-xs text-grey-400">Popups</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-20 h-20 bg-sunflower" style="border-radius:24px"></div>
+        <span class="text-sm font-medium mt-2">Radius-xl</span>
+        <span class="text-xs font-mono text-grey-500">24px</span>
+        <span class="text-xs text-grey-400">Bottom sheet</span>
+      </div>
+      <div class="flex flex-col items-center">
+        <div class="w-20 h-20 bg-sunflower" style="border-radius:999px"></div>
+        <span class="text-sm font-medium mt-2">Radius-full</span>
+        <span class="text-xs font-mono text-grey-500">999px</span>
+        <span class="text-xs text-grey-400">Circles</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHADOWS ===== -->
+  <section id="shadows" class="token-section">
+    <h2 class="section-title">Shadows</h2>
+    <div class="flex gap-8">
+      <div class="flex flex-col items-center">
+        <div class="w-32 h-32 bg-white rounded-lg" style="box-shadow:0 0 16px rgba(0,0,0,0.08)"></div>
+        <span class="text-sm font-medium mt-3">Shadow</span>
+        <span class="text-xs font-mono text-grey-500">0 0 16px rgba(0,0,0,0.08)</span>
+        <span class="text-xs text-grey-400">Card, App Navigation</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-grey-300 pt-6 mt-16 text-sm text-grey-500">
+    <p>Extracted from <a href="https://www.figma.com/design/wCQ6CDLb1JUiQSPrIJwG2Y/Foundation" class="text-bluebell underline">Figma Foundation file</a></p>
+  </footer>
+
+</body>
+</html>

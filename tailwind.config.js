@@ -1,0 +1,113 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./**/*.html"],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
+      },
+      colors: {
+        sunflower: {
+          DEFAULT: "#F8C642",
+          700: "#FFDB7E",
+          400: "#FCE4AA",
+          200: "#FEF2D4",
+        },
+        marigold: {
+          DEFAULT: "#E88239",
+          700: "#EC9D69",
+          400: "#F5C6A7",
+          200: "#F9E2D1",
+        },
+        bluebell: {
+          DEFAULT: "#6071D7",
+          700: "#8491DF",
+          400: "#B7BFEC",
+          200: "#DADFF6",
+        },
+        "signal-yellow": {
+          DEFAULT: "#FFD400",
+          700: "#FFE066",
+          400: "#FFF0B3",
+          200: "#FFF9E6",
+        },
+        "vibrant-orange": {
+          DEFAULT: "#F25C2A",
+          700: "#F78A63",
+          400: "#FBC3AE",
+          200: "#FDE8DF",
+        },
+        "electric-blue": {
+          DEFAULT: "#0D2BFF",
+          700: "#4D63FF",
+          400: "#9AA6FF",
+          200: "#E4E8FF",
+        },
+        cream: {
+          DEFAULT: "#F6F1E7",
+          700: "#F8F3EB",
+          400: "#F9F6EE",
+          200: "#FBF8F2",
+        },
+        green: {
+          DEFAULT: "#12B76A",
+          700: "#4FC68C",
+          400: "#96DEBB",
+          200: "#CAEFDD",
+        },
+        red: {
+          DEFAULT: "#F04438",
+          700: "#F47169",
+          400: "#F8ABA5",
+          200: "#FCD5D1",
+        },
+        grey: {
+          100: "#F9FAFB",
+          200: "#F2F4F7",
+          300: "#EAECF0",
+          400: "#D0D5DD",
+          500: "#98A2B3",
+          600: "#667085",
+          700: "#475467",
+          800: "#344054",
+          900: "#222832",
+          950: "#0F0F0F",
+        },
+      },
+      spacing: {
+        xxs: "4px",
+        xs: "8px",
+        sm: "12px",
+        md: "16px",
+        lg: "24px",
+        xl: "32px",
+        xxl: "40px",
+        xxxl: "48px",
+      },
+      borderRadius: {
+        xs: "2px",
+        sm: "4px",
+        md: "8px",
+        lg: "12px",
+        xl: "24px",
+        full: "999px",
+      },
+      boxShadow: {
+        card: "0 0 16px rgba(0, 0, 0, 0.08)",
+      },
+      fontSize: {
+        "title-1": ["36px", { lineHeight: "1.3", fontWeight: "700" }],
+        "title-2": ["28px", { lineHeight: "1.3", fontWeight: "700" }],
+        "title-3": ["24px", { lineHeight: "1.4", fontWeight: "700" }],
+        "title-4": ["20px", { lineHeight: "1.4", fontWeight: "700" }],
+        heading: ["18px", { lineHeight: "1.4", fontWeight: "700" }],
+        subheading: ["18px", { lineHeight: "1.5" }],
+        body: ["16px", { lineHeight: "1.5" }],
+        footnote: ["14px", { lineHeight: "1.5" }],
+        caption: ["12px", { lineHeight: "1.5" }],
+        overline: ["10px", { lineHeight: "1.5" }],
+      },
+    },
+  },
+  plugins: [],
+};
