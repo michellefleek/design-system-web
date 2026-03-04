@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Components - Foundation Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="tokens.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ["Montserrat", "sans-serif"] },
+          colors: {
+            sunflower: { DEFAULT: "#F8C642", 700: "#FFDB7E", 400: "#FCE4AA", 200: "#FEF2D4" },
+            marigold: { DEFAULT: "#E88239", 700: "#EC9D69", 400: "#F5C6A7", 200: "#F9E2D1" },
+            bluebell: { DEFAULT: "#6071D7", 700: "#8491DF", 400: "#B7BFEC", 200: "#DADFF6" },
+            "signal-yellow": { DEFAULT: "#FFD400", 700: "#FFE066", 400: "#FFF0B3", 200: "#FFF9E6" },
+            "vibrant-orange": { DEFAULT: "#F25C2A", 700: "#F78A63", 400: "#FBC3AE", 200: "#FDE8DF" },
+            "electric-blue": { DEFAULT: "#0D2BFF", 700: "#4D63FF", 400: "#9AA6FF", 200: "#E4E8FF" },
+            cream: { DEFAULT: "#F6F1E7", 700: "#F8F3EB", 400: "#F9F6EE", 200: "#FBF8F2" },
+            green: { DEFAULT: "#12B76A", 700: "#4FC68C", 400: "#96DEBB", 200: "#CAEFDD" },
+            red: { DEFAULT: "#F04438", 700: "#F47169", 400: "#F8ABA5", 200: "#FCD5D1" },
+            grey: { 100: "#F9FAFB", 200: "#F2F4F7", 300: "#EAECF0", 400: "#D0D5DD", 500: "#98A2B3", 600: "#667085", 700: "#475467", 800: "#344054", 900: "#222832", 950: "#0F0F0F" },
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    body { font-family: 'Montserrat', sans-serif; }
+    .token-section { @apply mb-16; }
+    .section-title { @apply text-2xl font-bold mb-6 text-grey-900 border-b border-grey-300 pb-3; }
+    .subsection-title { @apply text-lg font-bold mb-4 text-grey-800; }
+    .component-row { @apply flex flex-wrap items-center gap-4 mb-6; }
+    .component-label { @apply text-sm text-grey-600 w-28 flex-shrink-0; }
+    .spec-table th { @apply text-left py-2 text-grey-600 font-medium text-sm; }
+    .spec-table td { @apply py-2 text-sm; }
+  </style>
+</head>
+<body class="bg-white text-grey-900 p-8 max-w-7xl mx-auto">
+
+  <!-- Header -->
+  <header class="mb-12">
+    <h1 class="text-4xl font-bold mb-2">Components</h1>
+    <p class="text-grey-600 text-lg">UI components extracted from Figma</p>
+    <nav class="mt-6 flex flex-wrap gap-3">
+      <a href="index.html" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Tokens</a>
+      <a href="#buttons" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Buttons</a>
+      <a href="#checkbox" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Checkbox</a>
+      <a href="#pills" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Pills</a>
+      <a href="#radio" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Radio</a>
+      <a href="#divider" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Divider</a>
+      <a href="#tags" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Tags</a>
+      <a href="#toast" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Toast</a>
+      <a href="#lists" class="text-sm font-medium px-4 py-2 bg-grey-100 rounded-lg hover:bg-grey-200 transition">Lists</a>
+    </nav>
+  </header>
+
+  <!-- ===== BUTTONS ===== -->
+  <section id="buttons" class="token-section">
+    <h2 class="section-title">Buttons</h2>
+    <p class="text-grey-600 mb-6 text-sm">Text buttons in 4 variants and 3 sizes. Icon buttons are circular. Font: Montserrat Bold. Border radius: 4px.</p>
+
+    <!-- Text Buttons - Variants -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Text Button Variants</h3>
+
+      <!-- Primary Brand -->
+      <div class="mb-6">
+        <p class="text-sm font-medium text-grey-700 mb-3">Primary Brand</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <button class="h-8 px-4 bg-sunflower text-black text-xs font-bold rounded-sm hover:opacity-90 transition">Small</button>
+          <button class="h-11 px-5 bg-sunflower text-black text-sm font-bold rounded-sm hover:opacity-90 transition">Medium</button>
+          <button class="h-14 px-6 bg-sunflower text-black text-base font-bold rounded-sm hover:opacity-90 transition">Large</button>
+          <button class="h-11 px-5 bg-sunflower text-black text-sm font-bold rounded-sm opacity-60 cursor-default">Pressed</button>
+          <button class="h-11 px-5 bg-grey-400 text-grey-500 text-sm font-bold rounded-sm cursor-not-allowed">Disabled</button>
+          <button class="h-11 px-5 bg-sunflower text-black text-sm font-bold rounded-sm flex items-center gap-2">
+            <svg class="animate-spin h-4 w-4" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
+            Loading
+          </button>
+        </div>
+      </div>
+
+      <!-- Primary Contrast -->
+      <div class="mb-6">
+        <p class="text-sm font-medium text-grey-700 mb-3">Primary Contrast</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <button class="h-8 px-4 bg-black text-white text-xs font-bold rounded-sm hover:opacity-90 transition">Small</button>
+          <button class="h-11 px-5 bg-black text-white text-sm font-bold rounded-sm hover:opacity-90 transition">Medium</button>
+          <button class="h-14 px-6 bg-black text-white text-base font-bold rounded-sm hover:opacity-90 transition">Large</button>
+          <button class="h-11 px-5 bg-black text-white text-sm font-bold rounded-sm opacity-60 cursor-default">Pressed</button>
+          <button class="h-11 px-5 bg-grey-400 text-grey-500 text-sm font-bold rounded-sm cursor-not-allowed">Disabled</button>
+        </div>
+      </div>
+
+      <!-- Secondary -->
+      <div class="mb-6">
+        <p class="text-sm font-medium text-grey-700 mb-3">Secondary</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <button class="h-8 px-4 bg-white text-black text-xs font-bold rounded-sm border border-black hover:bg-grey-100 transition">Small</button>
+          <button class="h-11 px-5 bg-white text-black text-sm font-bold rounded-sm border border-black hover:bg-grey-100 transition">Medium</button>
+          <button class="h-14 px-6 bg-white text-black text-base font-bold rounded-sm border border-black hover:bg-grey-100 transition">Large</button>
+          <button class="h-11 px-5 bg-white text-black text-sm font-bold rounded-sm border border-black opacity-60 cursor-default">Pressed</button>
+          <button class="h-11 px-5 bg-white text-grey-500 text-sm font-bold rounded-sm border border-grey-400 cursor-not-allowed">Disabled</button>
+        </div>
+      </div>
+
+      <!-- Tertiary -->
+      <div class="mb-6">
+        <p class="text-sm font-medium text-grey-700 mb-3">Tertiary</p>
+        <div class="flex flex-wrap items-center gap-4">
+          <button class="h-8 px-4 text-black text-xs font-bold rounded-sm hover:bg-grey-100 transition">Small</button>
+          <button class="h-11 px-5 text-black text-sm font-bold rounded-sm hover:bg-grey-100 transition">Medium</button>
+          <button class="h-14 px-6 text-black text-base font-bold rounded-sm hover:bg-grey-100 transition">Large</button>
+          <button class="h-11 px-5 text-black text-sm font-bold rounded-sm opacity-60 cursor-default">Pressed</button>
+          <button class="h-11 px-5 text-grey-500 text-sm font-bold rounded-sm cursor-not-allowed">Disabled</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Icon Buttons -->
+    <div class="mb-10">
+      <h3 class="subsection-title">Icon Buttons</h3>
+      <p class="text-sm text-grey-600 mb-4">Circular icon buttons in 3 sizes (32/44/56px).</p>
+      <div class="flex flex-wrap items-center gap-4">
+        <!-- Small -->
+        <button class="w-8 h-8 bg-sunflower rounded-full flex items-center justify-center hover:opacity-90 transition">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <!-- Medium -->
+        <button class="w-11 h-11 bg-sunflower rounded-full flex items-center justify-center hover:opacity-90 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <!-- Large -->
+        <button class="w-14 h-14 bg-sunflower rounded-full flex items-center justify-center hover:opacity-90 transition">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <!-- Contrast -->
+        <button class="w-11 h-11 bg-black rounded-full flex items-center justify-center hover:opacity-90 transition">
+          <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <!-- Secondary -->
+        <button class="w-11 h-11 bg-white border border-black rounded-full flex items-center justify-center hover:bg-grey-100 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+        <!-- Disabled -->
+        <button class="w-11 h-11 bg-grey-400 rounded-full flex items-center justify-center cursor-not-allowed">
+          <svg class="w-5 h-5 text-grey-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Specs Table -->
+    <div>
+      <h3 class="subsection-title">Specs</h3>
+      <table class="spec-table w-full text-sm border-collapse">
+        <thead><tr class="border-b border-grey-300"><th>Size</th><th>Height</th><th>Font Size</th><th>Padding</th></tr></thead>
+        <tbody>
+          <tr class="border-b border-grey-200"><td class="py-2">Small</td><td class="font-mono text-xs">32px</td><td class="font-mono text-xs">12px</td><td class="font-mono text-xs">0 16px</td></tr>
+          <tr class="border-b border-grey-200"><td class="py-2">Medium</td><td class="font-mono text-xs">44px</td><td class="font-mono text-xs">14px</td><td class="font-mono text-xs">0 20px</td></tr>
+          <tr class="border-b border-grey-200"><td class="py-2">Large</td><td class="font-mono text-xs">56px</td><td class="font-mono text-xs">16px</td><td class="font-mono text-xs">0 24px</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== CHECKBOX ===== -->
+  <section id="checkbox" class="token-section">
+    <h2 class="section-title">Checkbox</h2>
+    <p class="text-grey-600 mb-6 text-sm">Checkboxes in 3 states (selected, indeterminate, unselected) and 3 sizes. Black fill with white checkmark when selected.</p>
+
+    <div class="mb-10">
+      <h3 class="subsection-title">States</h3>
+      <div class="flex flex-wrap items-start gap-10">
+        <!-- Unselected -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-5 h-5 border-2 border-grey-400 rounded-[3px]"></div>
+          <span class="text-xs text-grey-600">Unselected</span>
+        </div>
+        <!-- Selected -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-5 h-5 bg-black rounded-[3px] flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-xs text-grey-600">Selected</span>
+        </div>
+        <!-- Indeterminate -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-5 h-5 bg-black rounded-[3px] flex items-center justify-center">
+            <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" d="M5 12h14"/></svg>
+          </div>
+          <span class="text-xs text-grey-600">Indeterminate</span>
+        </div>
+        <!-- Disabled -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-5 h-5 border-2 border-grey-300 rounded-[3px] bg-grey-100"></div>
+          <span class="text-xs text-grey-600">Disabled</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-10">
+      <h3 class="subsection-title">With Labels</h3>
+      <div class="space-y-4">
+        <!-- Label Right -->
+        <label class="flex items-center gap-3 cursor-pointer">
+          <div class="w-5 h-5 bg-black rounded-[3px] flex items-center justify-center flex-shrink-0">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+          <span class="text-sm font-medium">Label Right (Default)</span>
+        </label>
+        <!-- Label Left -->
+        <label class="flex items-center gap-3 cursor-pointer">
+          <span class="text-sm font-medium">Label Left</span>
+          <div class="w-5 h-5 bg-black rounded-[3px] flex items-center justify-center flex-shrink-0">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+          </div>
+        </label>
+        <!-- With Description -->
+        <label class="flex items-start gap-3 cursor-pointer">
+          <div class="w-5 h-5 border-2 border-grey-400 rounded-[3px] flex-shrink-0 mt-0.5"></div>
+          <div>
+            <span class="text-sm font-medium block">With Description</span>
+            <span class="text-xs text-grey-500">Supporting text for checkbox option</span>
+          </div>
+        </label>
+        <!-- Disabled with label -->
+        <label class="flex items-center gap-3 cursor-not-allowed opacity-50">
+          <div class="w-5 h-5 border-2 border-grey-300 rounded-[3px] bg-grey-100 flex-shrink-0"></div>
+          <span class="text-sm font-medium text-grey-500">Disabled</span>
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="subsection-title">Sizes</h3>
+      <div class="flex flex-wrap items-center gap-8">
+        <label class="flex items-center gap-2">
+          <div class="w-4 h-4 bg-black rounded-[2px] flex items-center justify-center"><svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+          <span class="text-xs">Small (38px tap)</span>
+        </label>
+        <label class="flex items-center gap-2">
+          <div class="w-5 h-5 bg-black rounded-[3px] flex items-center justify-center"><svg class="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+          <span class="text-sm">Medium (42px tap)</span>
+        </label>
+        <label class="flex items-center gap-3">
+          <div class="w-6 h-6 bg-black rounded-[3px] flex items-center justify-center"><svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+          <span class="text-base">Large (46px tap)</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PILLS ===== -->
+  <section id="pills" class="token-section">
+    <h2 class="section-title">Pills</h2>
+    <p class="text-grey-600 mb-6 text-sm">Filter chips / pills. Height: 32px. Border radius: 999px (full). Font: Caption Regular (12px / 500).</p>
+
+    <div class="mb-10">
+      <h3 class="subsection-title">States</h3>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center h-8 px-4 bg-white border border-grey-400 rounded-full text-xs font-medium text-grey-900 cursor-pointer hover:bg-grey-100 transition">Unselected</span>
+        <span class="inline-flex items-center h-8 px-4 bg-black rounded-full text-xs font-medium text-white cursor-pointer">Selected</span>
+        <span class="inline-flex items-center h-8 px-4 bg-grey-200 border border-grey-300 rounded-full text-xs font-medium text-grey-400 cursor-not-allowed">Disabled</span>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="subsection-title">Example Filter Bar</h3>
+      <div class="flex flex-wrap items-center gap-2 p-4 bg-grey-100 rounded-lg">
+        <span class="inline-flex items-center h-8 px-4 bg-black rounded-full text-xs font-medium text-white">All</span>
+        <span class="inline-flex items-center h-8 px-4 bg-white border border-grey-400 rounded-full text-xs font-medium text-grey-900">Category A</span>
+        <span class="inline-flex items-center h-8 px-4 bg-white border border-grey-400 rounded-full text-xs font-medium text-grey-900">Category B</span>
+        <span class="inline-flex items-center h-8 px-4 bg-white border border-grey-400 rounded-full text-xs font-medium text-grey-900">Category C</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RADIO ===== -->
+  <section id="radio" class="token-section">
+    <h2 class="section-title">Radio</h2>
+    <p class="text-grey-600 mb-6 text-sm">Radio buttons in checked/unchecked states and 3 sizes. Black circle with inner dot when checked.</p>
+
+    <div class="mb-10">
+      <h3 class="subsection-title">States</h3>
+      <div class="flex flex-wrap items-start gap-10">
+        <!-- Unchecked -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-5 h-5 rounded-full border-2 border-grey-400"></div>
+          <span class="text-xs text-grey-600">Unchecked</span>
+        </div>
+        <!-- Checked -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-5 h-5 rounded-full border-[6px] border-black"></div>
+          <span class="text-xs text-grey-600">Checked</span>
+        </div>
+        <!-- Disabled -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-5 h-5 rounded-full border-2 border-grey-300 bg-grey-100"></div>
+          <span class="text-xs text-grey-600">Disabled</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-10">
+      <h3 class="subsection-title">With Labels</h3>
+      <div class="space-y-4">
+        <label class="flex items-center gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded-full border-[6px] border-black flex-shrink-0"></div>
+          <span class="text-sm font-medium">Option A (Selected)</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded-full border-2 border-grey-400 flex-shrink-0"></div>
+          <span class="text-sm font-medium">Option B</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-pointer">
+          <div class="w-5 h-5 rounded-full border-2 border-grey-400 flex-shrink-0"></div>
+          <span class="text-sm font-medium">Option C</span>
+        </label>
+        <label class="flex items-center gap-3 cursor-not-allowed opacity-50">
+          <div class="w-5 h-5 rounded-full border-2 border-grey-300 bg-grey-100 flex-shrink-0"></div>
+          <span class="text-sm font-medium text-grey-500">Option D (Disabled)</span>
+        </label>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="subsection-title">Sizes</h3>
+      <div class="flex flex-wrap items-center gap-8">
+        <label class="flex items-center gap-2">
+          <div class="w-4 h-4 rounded-full border-[5px] border-black"></div>
+          <span class="text-xs">Small</span>
+        </label>
+        <label class="flex items-center gap-2">
+          <div class="w-5 h-5 rounded-full border-[6px] border-black"></div>
+          <span class="text-sm">Medium</span>
+        </label>
+        <label class="flex items-center gap-3">
+          <div class="w-6 h-6 rounded-full border-[7px] border-black"></div>
+          <span class="text-base">Large</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DIVIDER ===== -->
+  <section id="divider" class="token-section">
+    <h2 class="section-title">Divider</h2>
+    <p class="text-grey-600 mb-6 text-sm">Simple horizontal line divider. 1px solid stroke.</p>
+
+    <div class="space-y-8">
+      <div>
+        <p class="text-sm font-medium text-grey-700 mb-3">Default (Grey 300)</p>
+        <hr class="border-t border-grey-300" />
+      </div>
+      <div>
+        <p class="text-sm font-medium text-grey-700 mb-3">With margin (16px vertical)</p>
+        <div class="py-4 bg-grey-100 rounded-lg px-4">
+          <p class="text-sm text-grey-700">Content above</p>
+          <hr class="border-t border-grey-300 my-4" />
+          <p class="text-sm text-grey-700">Content below</p>
+        </div>
+      </div>
+      <div>
+        <p class="text-sm font-medium text-grey-700 mb-3">Muted (Grey 200)</p>
+        <hr class="border-t border-grey-200" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TAGS / BADGES ===== -->
+  <section id="tags" class="token-section">
+    <h2 class="section-title">Tags / Badges</h2>
+    <p class="text-grey-600 mb-6 text-sm">Compact labels. Height: 18px. Border radius: 2px. Font: 12px Medium (500).</p>
+
+    <div class="mb-10">
+      <h3 class="subsection-title">Variants</h3>
+      <div class="flex flex-wrap items-center gap-4">
+        <!-- Filled -->
+        <span class="inline-flex items-center h-[18px] px-2 bg-grey-400 rounded-[2px] text-[12px] font-medium text-grey-900 leading-none">Filled Tag</span>
+        <!-- No Fill -->
+        <span class="inline-flex items-center h-[18px] px-2 rounded-[2px] text-[12px] font-medium text-grey-600 leading-none">No Fill Tag</span>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="subsection-title">Usage Examples</h3>
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="inline-flex items-center h-[18px] px-2 bg-grey-400 rounded-[2px] text-[12px] font-medium text-grey-900 leading-none">New</span>
+        <span class="inline-flex items-center h-[18px] px-2 bg-grey-400 rounded-[2px] text-[12px] font-medium text-grey-900 leading-none">Featured</span>
+        <span class="inline-flex items-center h-[18px] px-2 bg-grey-400 rounded-[2px] text-[12px] font-medium text-grey-900 leading-none">Sale</span>
+        <span class="inline-flex items-center h-[18px] px-2 rounded-[2px] text-[12px] font-medium text-grey-600 leading-none">Draft</span>
+        <span class="inline-flex items-center h-[18px] px-2 rounded-[2px] text-[12px] font-medium text-grey-600 leading-none">Archived</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOAST ===== -->
+  <section id="toast" class="token-section">
+    <h2 class="section-title">Toast</h2>
+    <p class="text-grey-600 mb-6 text-sm">Notification toasts. Width: 344px. Height: 48px. Border radius: 999px. 3 types: Default, Error, Warning.</p>
+
+    <div class="space-y-4">
+      <!-- Default Toast -->
+      <div class="w-[344px] h-12 bg-grey-900 rounded-full flex items-center px-5 gap-3">
+        <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+        <span class="text-sm text-white flex-1">Action completed</span>
+        <button class="text-xs font-bold text-sunflower hover:underline flex-shrink-0">Undo</button>
+        <button class="text-white flex-shrink-0 ml-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Error Toast -->
+      <div class="w-[344px] h-12 bg-red rounded-full flex items-center px-5 gap-3">
+        <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+        <span class="text-sm text-white flex-1">Something went wrong</span>
+        <button class="text-xs font-bold text-white hover:underline flex-shrink-0">Retry</button>
+        <button class="text-white flex-shrink-0 ml-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Warning Toast -->
+      <div class="w-[344px] h-12 bg-vibrant-orange rounded-full flex items-center px-5 gap-3">
+        <svg class="w-5 h-5 text-white flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86l-8.77 15.1A1 1 0 002.38 21h17.25a1 1 0 00.86-1.49l-8.77-15.1a1 1 0 00-1.72 0z"/></svg>
+        <span class="text-sm text-white flex-1">Check your connection</span>
+        <button class="text-white flex-shrink-0 ml-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Default without icon -->
+      <div class="w-[344px] h-12 bg-grey-900 rounded-full flex items-center px-5 gap-3">
+        <span class="text-sm text-white flex-1">Simple message toast</span>
+        <button class="text-white flex-shrink-0">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LISTS ===== -->
+  <section id="lists" class="token-section">
+    <h2 class="section-title">Lists</h2>
+    <p class="text-grey-600 mb-6 text-sm">List items in Dense (54px) and Standard (62px) densities. States: Default, Pressed, Selected, Disabled. Optional border, left/right slots, subtext.</p>
+
+    <div class="mb-10">
+      <h3 class="subsection-title">Dense List</h3>
+      <div class="border border-grey-300 rounded-md overflow-hidden max-w-md">
+        <!-- Default -->
+        <div class="h-[54px] flex items-center px-4 border-b border-grey-200 hover:bg-grey-100 cursor-pointer transition">
+          <div class="w-8 h-8 bg-grey-300 rounded-full flex-shrink-0 mr-3"></div>
+          <span class="text-sm font-medium flex-1">List Item Default</span>
+          <svg class="w-5 h-5 text-grey-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+        <!-- Selected -->
+        <div class="h-[54px] flex items-center px-4 border-b border-grey-200 bg-grey-200 cursor-pointer">
+          <div class="w-8 h-8 bg-grey-400 rounded-full flex-shrink-0 mr-3"></div>
+          <span class="text-sm font-medium flex-1">List Item Selected</span>
+          <svg class="w-5 h-5 text-grey-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+        <!-- Pressed -->
+        <div class="h-[54px] flex items-center px-4 border-b border-grey-200 bg-grey-100 cursor-pointer">
+          <div class="w-8 h-8 bg-grey-300 rounded-full flex-shrink-0 mr-3"></div>
+          <span class="text-sm font-medium flex-1">List Item Pressed</span>
+          <svg class="w-5 h-5 text-grey-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+        <!-- Disabled -->
+        <div class="h-[54px] flex items-center px-4 opacity-40 cursor-not-allowed">
+          <div class="w-8 h-8 bg-grey-300 rounded-full flex-shrink-0 mr-3"></div>
+          <span class="text-sm font-medium flex-1 text-grey-500">List Item Disabled</span>
+          <svg class="w-5 h-5 text-grey-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-10">
+      <h3 class="subsection-title">Standard List (with subtext)</h3>
+      <div class="border border-grey-300 rounded-md overflow-hidden max-w-md">
+        <div class="h-[62px] flex items-center px-4 border-b border-grey-200 hover:bg-grey-100 cursor-pointer transition">
+          <div class="w-10 h-10 bg-grey-300 rounded-full flex-shrink-0 mr-3"></div>
+          <div class="flex-1 min-w-0">
+            <span class="text-sm font-medium block">Item Title</span>
+            <span class="text-xs text-grey-500 block truncate">Supporting description text</span>
+          </div>
+          <svg class="w-5 h-5 text-grey-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+        <div class="h-[62px] flex items-center px-4 border-b border-grey-200 bg-grey-200 cursor-pointer">
+          <div class="w-10 h-10 bg-grey-400 rounded-full flex-shrink-0 mr-3"></div>
+          <div class="flex-1 min-w-0">
+            <span class="text-sm font-medium block">Selected Item</span>
+            <span class="text-xs text-grey-500 block truncate">This item is currently selected</span>
+          </div>
+          <svg class="w-5 h-5 text-grey-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+        <div class="h-[62px] flex items-center px-4 hover:bg-grey-100 cursor-pointer transition">
+          <div class="w-10 h-10 bg-grey-300 rounded-full flex-shrink-0 mr-3"></div>
+          <div class="flex-1 min-w-0">
+            <span class="text-sm font-medium block">Another Item</span>
+            <span class="text-xs text-grey-500 block truncate">More supporting text here</span>
+          </div>
+          <svg class="w-5 h-5 text-grey-500 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Specs -->
+    <div>
+      <h3 class="subsection-title">Specs</h3>
+      <table class="spec-table w-full text-sm border-collapse">
+        <thead><tr class="border-b border-grey-300"><th>Density</th><th>Height</th><th>Avatar</th><th>Selected BG</th></tr></thead>
+        <tbody>
+          <tr class="border-b border-grey-200"><td class="py-2">Dense</td><td class="font-mono text-xs">54px</td><td class="font-mono text-xs">32px</td><td class="font-mono text-xs">#F2F4F7</td></tr>
+          <tr class="border-b border-grey-200"><td class="py-2">Standard</td><td class="font-mono text-xs">62px</td><td class="font-mono text-xs">40px</td><td class="font-mono text-xs">#F2F4F7</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="border-t border-grey-300 pt-6 mt-16 text-sm text-grey-500">
+    <p>Extracted from <a href="https://www.figma.com/design/1FHA0QJkzpqnORzXcPfNh2/Components" class="text-bluebell underline">Figma Components file</a></p>
+  </footer>
+
+</body>
+</html>
